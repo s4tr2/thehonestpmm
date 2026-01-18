@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 262 83% 58%;
+    --accent: 310 80% 60%;
+    --background: 260 20% 98%;
+    --foreground: 260 20% 10%;
+    --border: 260 15% 90%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased selection:bg-primary/20 selection:text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Mesh Gradient Utility */
+.mesh-light {
+  background-color: hsl(var(--background));
+  background-image: 
+    radial-gradient(at 40% 20%, hsl(262 83% 58% / 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsl(310 80% 60% / 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsl(260 20% 98%) 0px, transparent 50%);
+}
