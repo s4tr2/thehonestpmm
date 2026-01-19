@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,10 +14,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased selection:bg-primary/20 selection:text-primary;
+    @apply bg-[#0a0a0a] text-white font-sans;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight;
   }
 }
@@ -23,7 +30,7 @@
 /* Custom Mesh Gradient Utility */
 .mesh-light {
   background-color: hsl(var(--background));
-  background-image: 
+  background-image:
     radial-gradient(at 40% 20%, hsl(262 83% 58% / 0.1) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsl(310 80% 60% / 0.1) 0px, transparent 50%),
     radial-gradient(at 0% 50%, hsl(260 20% 98%) 0px, transparent 50%);

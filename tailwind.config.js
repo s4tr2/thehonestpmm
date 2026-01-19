@@ -7,22 +7,25 @@ export default {
     theme: {
         extend: {
             colors: {
-                border: "hsl(var(--border) / <alpha-value>)",
-                background: "hsl(var(--background) / <alpha-value>)",
-                foreground: "hsl(var(--foreground) / <alpha-value>)",
-                primary: {
-                    DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-                    foreground: "#ffffff",
-                },
+                background: '#0a0a0a',
                 accent: {
-                    DEFAULT: "hsl(var(--accent) / <alpha-value>)",
-                    foreground: "#ffffff",
-                },
+                    DEFAULT: '#d4ff00',
+                    pink: '#ff3366',
+                    orange: '#ff6b35',
+                }
             },
             fontFamily: {
-                body: ["Inter", "sans-serif"],
-                display: ["Plus Jakarta Sans", "sans-serif"],
-                heading: ["Plus Jakarta Sans", "sans-serif"],
+                sans: ['Inter', 'sans-serif'],
+                display: ['Space Grotesk', 'sans-serif'],
+            },
+            animation: {
+                'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-20px)' },
+                }
             },
         },
     },
