@@ -302,52 +302,6 @@ const DashboardMockup = () => {
     )
 }
 
-const BurnRateCard = () => (
-    <div className="border border-border rounded-xl p-4 shadow-sm bg-white">
-        <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-muted-foreground">Burn Rate</span>
-            <span className="text-xs font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded-full">High</span>
-        </div>
-        <div className="text-2xl font-bold font-display mb-4">$450k<span className="text-sm text-muted-foreground font-normal">/mo</span></div>
-        <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-destructive w-[85%] rounded-full"></div>
-        </div>
-        <div className="mt-2 text-[10px] text-muted-foreground flex items-center gap-1">
-            <AlertCircle size={10} className="text-destructive" />
-            <span>Faster than anticipated</span>
-        </div>
-    </div>
-)
-
-const RunwayCard = () => (
-    <div className="border border-border rounded-xl p-4 shadow-sm bg-white">
-        <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-muted-foreground">Runway</span>
-            <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full">Critical</span>
-        </div>
-        <div className="text-2xl font-bold font-display mb-4">4<span className="text-sm text-muted-foreground font-normal"> weeks</span></div>
-        <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-orange-500 w-[15%] rounded-full"></div>
-        </div>
-        <div className="mt-2 text-[10px] text-muted-foreground flex items-center gap-1">
-            <Zap size={10} className="text-orange-500" />
-            <span>Series B needed ASAP</span>
-        </div>
-    </div>
-)
-
-const MetricCard = ({ label, value, change, trend }: any) => (
-    <div className="border border-border rounded-xl p-4 shadow-sm bg-white">
-        <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-muted-foreground">{label}</span>
-        </div>
-        <div className="text-2xl font-bold font-display mb-4">{value}</div>
-        <div className={`text-xs font-medium flex items-center gap-1 ${trend === 'up' ? 'text-green-600' : 'text-destructive'}`}>
-            <TrendingUp size={12} className={trend === 'down' ? 'rotate-180' : ''} />
-            {change} <span className="text-muted-foreground font-normal">vs last month</span>
-        </div>
-    </div>
-)
 
 const FeaturesGrid = () => {
     return (
@@ -685,7 +639,7 @@ const CommentaryBubble = () => {
                     exit={{ opacity: 0, y: 20 }}
                 >
                     <motion.div
-                        className="bg-white border-2 border-foreground rounded-[2rem] p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] text-sm font-bold text-foreground relative max-w-[280px] mb-8"
+                        className="bg-white border-2 border-black rounded-[2rem] p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] text-lg font-hand font-bold text-black relative max-w-[280px] mb-8 leading-tight tracking-wide"
                         key={content.text} // Re-animate on comment change
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -694,11 +648,11 @@ const CommentaryBubble = () => {
                         {content.text}
 
                         {/* Comic Tail */}
-                        <svg className="absolute -bottom-[20px] right-8 w-6 h-6 text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 0C24 0 24 24 0 24C12 24 18 12 24 0Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                        <svg className="absolute -bottom-[25px] right-10 w-8 h-8 text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)]" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(2px 2px 0px rgba(0,0,0,0.1))" }}>
+                            <path d="M32.5 0C25 0 20 15 0 32.5C12 28 20 15 28 0H32.5Z" fill="white" stroke="black" strokeWidth="2" strokeLinejoin="round" />
+                            {/* Cover the top border of the tail to merge with bubble */}
+                            <path d="M0 0H40" stroke="white" strokeWidth="4" transform="translate(-2, 1)" />
                         </svg>
-                        {/* Cover the stroke overlap */}
-                        <div className="absolute -bottom-[2px] right-[33px] w-4 h-1 bg-white"></div>
                     </motion.div>
 
                     <div className="relative shrink-0 w-32 h-32">
