@@ -7,19 +7,56 @@ export default {
     theme: {
         extend: {
             colors: {
-                background: '#0a0a0a',
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                primary: {
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
+                },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
                 accent: {
-                    DEFAULT: '#d4ff00',
-                    pink: '#ff3366',
-                    orange: '#ff6b35',
-                }
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+            },
+            borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                display: ['Space Grotesk', 'sans-serif'],
+                sans: ["Inter", "sans-serif"],
+                display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            boxShadow: {
+                'refined': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+                'glass-inset': 'inset 0 0 0 1px rgba(255, 255, 255, 0.1)',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
+                'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
             },
             keyframes: {
                 float: {
